@@ -1,0 +1,23 @@
+
+
+# eclipse 2020 alias
+ECLIPSELAUNCHOUTPUT=~/eclipse_launch.log
+alias eclipse='touch $ECLIPSELAUNCHOUTPUT; echo "Starting Eclipse 2020. This is an alias. Output stored at $ECLIPSELAUNCHOUTPUT"; ~/Downloads/eclipse/eclipse > $ECLIPSELAUNCHOUTPUT 2>&1 &'
+alias clipse2020="env GTK_IM_MODULE=ibus /home/tpmcroberts/eclipse/cpp-2020-09/eclipse/eclipse &"
+
+# wirte and source bash rc since apparently I modify it a lot
+alias sbrc="source ~/.bashrc"
+alias bashrc='vim "+normal G$" ~/.bashrc'
+alias aliases='vim "+normal G$" ~/.bash_aliases'
+PERSONALSAVE=~/personal_save/linenv
+BASHRCNAME=bashrc_intbio
+BASHALIASNAME=bash_aliases_intbio
+VIMRCNAME=vimrc_intbio
+alias updrc='cp ~/.bash_aliases $PERSONALSAVE/$BASHALIASNAME; cp ~/.bashrc $PERSONALSAVE/$BASHRCNAME; cp ~/.vimrc $PERSONALSAVE/VIMRCNAME'
+
+#
+alias ib_aliases="vim ${HOME}/src/ib_build/tools/bash_aliases"
+
+
+# Fortune Cow Aliases	
+alias forcowclips='vim "+normal G$" ~/.fortune_cow_clips'	# view clipped fortune cows
