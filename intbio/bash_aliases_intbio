@@ -9,11 +9,13 @@ alias clipse2020="env GTK_IM_MODULE=ibus /home/tpmcroberts/eclipse/cpp-2020-09/e
 alias sbrc="source ~/.bashrc"
 alias bashrc='vim "+normal G$" ~/.bashrc'
 alias aliases='vim "+normal G$" ~/.bash_aliases'
+
+SAVEENV=intbio
 PERSONALSAVE=~/personal_save/linenv
-BASHRCNAME=bashrc_intbio
-BASHALIASNAME=bash_aliases_intbio
-VIMRCNAME=vimrc_intbio
-alias updrc='cp ~/.bash_aliases $PERSONALSAVE/$BASHALIASNAME; cp ~/.bashrc $PERSONALSAVE/$BASHRCNAME; cp ~/.vimrc $PERSONALSAVE/VIMRCNAME'
+BASHRCNAME=bashrc_$SAVEENV
+BASHALIASNAME=bash_aliases_$SAVEENV
+VIMRCNAME=vimrc_$SAVEENV
+alias updrc='mkdir $PERSONALSAVE/$SAVEENV; cp ~/.bash_aliases $PERSONALSAVE/$SAVEENV/$BASHALIASNAME; cp ~/.bashrc $PERSONALSAVE/$SAVEENV/$BASHRCNAME; cp ~/.vimrc $PERSONALSAVE/$SAVEENV/$VIMRCNAME'
 
 #
 alias ib_aliases="vim ${HOME}/src/ib_build/tools/bash_aliases"
