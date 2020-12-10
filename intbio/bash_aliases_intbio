@@ -2,7 +2,7 @@
 
 # eclipse 2020 alias
 ECLIPSELAUNCHOUTPUT=~/eclipse_launch.log
-alias eclipse='touch $ECLIPSELAUNCHOUTPUT; echo "Starting Eclipse 2020. This is an alias. Output stored at $ECLIPSELAUNCHOUTPUT"; ~/Downloads/eclipse/eclipse > $ECLIPSELAUNCHOUTPUT 2>&1 &'
+alias eclipse='touch $ECLIPSELAUNCHOUTPUT; echo "Launching Eclipse 2020. This is an alias. Output stored at $ECLIPSELAUNCHOUTPUT"; ~/Downloads/eclipse/eclipse > $ECLIPSELAUNCHOUTPUT 2>&1 &'
 alias clipse2020="env GTK_IM_MODULE=ibus /home/tpmcroberts/eclipse/cpp-2020-09/eclipse/eclipse &"
 
 # wirte and source bash rc since apparently I modify it a lot
@@ -15,7 +15,8 @@ PERSONALSAVE=~/personal_save/linenv
 BASHRCNAME=bashrc_$SAVEENV
 BASHALIASNAME=bash_aliases_$SAVEENV
 VIMRCNAME=vimrc_$SAVEENV
-alias updrc='mkdir $PERSONALSAVE/$SAVEENV; cp ~/.bash_aliases $PERSONALSAVE/$SAVEENV/$BASHALIASNAME; cp ~/.bashrc $PERSONALSAVE/$SAVEENV/$BASHRCNAME; cp ~/.vimrc $PERSONALSAVE/$SAVEENV/$VIMRCNAME'
+COWCLIPSNAME=cowclips_$SAVEENV
+alias updrc='mkdir $PERSONALSAVE/$SAVEENV; cp ~/.bash_aliases $PERSONALSAVE/$SAVEENV/$BASHALIASNAME; cp ~/.bashrc $PERSONALSAVE/$SAVEENV/$BASHRCNAME; cp ~/.vimrc $PERSONALSAVE/$SAVEENV/$VIMRCNAME; cp ~/.fortune_cow_clips $PERSONALSAVE/$SAVEENV/$COWCLIPSNAME'
 
 #
 alias ib_aliases="vim ${HOME}/src/ib_build/tools/bash_aliases"
