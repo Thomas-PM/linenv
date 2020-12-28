@@ -1,4 +1,6 @@
 
+# Lifeborne environment aliases
+alias fwsrv='${BI_BUILD_PATH}/src/lb_fwsrv_c/fw_server/Debug/fw_server -c -v'
 
 # eclipse 2020 alias
 ECLIPSELAUNCHOUTPUT=~/eclipse_launch.log
@@ -9,6 +11,7 @@ alias clipse2020="env GTK_IM_MODULE=ibus /home/tpmcroberts/eclipse/cpp-2020-09/e
 alias sbrc="source ~/.bashrc"
 alias bashrc='vim "+normal G$" ~/.bashrc'
 alias aliases='vim "+normal G$" ~/.bash_aliases'
+alias persav='cd ~/personal_save/linenv'
 
 SAVEENV=intbio
 PERSONALSAVE=~/personal_save/linenv

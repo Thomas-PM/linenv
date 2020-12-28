@@ -140,6 +140,8 @@ cowclip() {
 
 
 # bash aliases for lifeborne environments
+BUILD_NUM=147
+FEATURE=001
 FILE=${HOME}/src/ib_build/tools/bash_aliases
 if [ -f ${FILE} ]; then
     source ${FILE}
