@@ -136,7 +136,44 @@ cowclip() {
 }
 
 
+# Directory manuevering
+PREV_DIR_SIZE=10
+		# Directory history array and init
+PREV_DIR=()
+for i in $(seq 1 $PREV_DIR_SIZE); do
+	PREV_DIR+=(~)
+done
+PREV_DIR_IDX=$((PREV_DIR_SIZE -1))
 
+		# List recent directories
+recent() {
+	echo Recent directories:
+	echo Currently on $PREV_DIR_IDX
+	for d in ${!PREV_DIR[@]}; do
+		echo $d : ${PREV_DIR[$d]}
+	done
+}
+
+		# Quickly jump back to a recent directory
+back() {
+	DIR_IDX=$PREV_DIR_IDX
+	if [ $# -eq 0 ]; then
+		DIR_IDX=$PREV_DIR_IDX
+	else
+		DIR_IDX=$1
+	fi
+	echo $DIR_IDX
+	cd ${PREV_DIR[$DIR_IDX]}
+		
+
+}
+
+		# Overwrite the builtin cd command to also save current dir
+cd() {
+	PREV_DIR_IDX=$((  $(($PREV_DIR_IDX + 1)) % $PREV_DIR_SIZE))
+	PREV_DIR[PREV_DIR_IDX]=$(pwd)
+	builtin cd ${1}
+}
 
 
 # bash aliases for lifeborne environments
@@ -146,6 +183,5 @@ FILE=${HOME}/src/ib_build/tools/bash_aliases
 if [ -f ${FILE} ]; then
     source ${FILE}
 fi
-
 
 
