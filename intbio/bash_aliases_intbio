@@ -1,6 +1,8 @@
 
 # Lifeborne environment aliases
 alias fwsrv='${BI_BUILD_PATH}/src/lb_fwsrv_c/fw_server/Debug/fw_server -c -v'
+alias buildpath='cd ~/bi_buildcache/147_001/src'
+alias tools='cd ~/bi_buildcache/147_001/src/ib_tools'
 
 # eclipse 2020 alias
 ECLIPSELAUNCHOUTPUT=~/eclipse_launch.log
@@ -19,7 +21,7 @@ BASHRCNAME=bashrc_$SAVEENV
 BASHALIASNAME=bash_aliases_$SAVEENV
 VIMRCNAME=vimrc_$SAVEENV
 COWCLIPSNAME=cowclips_$SAVEENV
-alias updrc='mkdir $PERSONALSAVE/$SAVEENV; cp ~/.bash_aliases $PERSONALSAVE/$SAVEENV/$BASHALIASNAME; cp ~/.bashrc $PERSONALSAVE/$SAVEENV/$BASHRCNAME; cp ~/.vimrc $PERSONALSAVE/$SAVEENV/$VIMRCNAME; cp ~/.fortune_cow_clips $PERSONALSAVE/$SAVEENV/$COWCLIPSNAME'
+alias updrc='mkdir -p $PERSONALSAVE/$SAVEENV; cp ~/.bash_aliases $PERSONALSAVE/$SAVEENV/$BASHALIASNAME; cp ~/.bashrc $PERSONALSAVE/$SAVEENV/$BASHRCNAME; cp ~/.vimrc $PERSONALSAVE/$SAVEENV/$VIMRCNAME; cp ~/.fortune_cow_clips $PERSONALSAVE/$SAVEENV/$COWCLIPSNAME'
 
 #
 alias ib_aliases="vim ${HOME}/src/ib_build/tools/bash_aliases"
