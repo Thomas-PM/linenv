@@ -1,8 +1,18 @@
 
 # Lifeborne environment aliases
 alias fwsrv='${BI_BUILD_PATH}/src/lb_fwsrv_c/fw_server/Debug/fw_server -c -v'
-alias buildpath='cd ~/bi_buildcache/147_001/src'
+alias src='cd ~/bi_buildcache/147_001/src'
 alias tools='cd ~/bi_buildcache/147_001/src/ib_tools'
+alias bld="cd ${HOME}/src/ib_build"
+alias ws="cd ${HOME}/src/ib_build; source ./bi_setup_fast_build.sh $BUILD_NUM $FEATURE"
+alias pkg="bitbake -g ib-image-warmer && cat pn-buildlist | grep -ve \"native\" | sort | uniq | grep \"ib-\" | grep -v \"glib\""
+alias sta='git status'
+
+
+# General Aliases
+# alias treegitsetup='git config --global alias.lgb "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"'
+
+
 
 # eclipse 2020 alias
 ECLIPSELAUNCHOUTPUT=~/eclipse_launch.log
