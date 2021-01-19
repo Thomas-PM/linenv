@@ -3,10 +3,14 @@
 alias fwsrv='${BI_BUILD_PATH}/src/lb_fwsrv_c/fw_server/Debug/fw_server -c -v'
 alias src='cd ~/bi_buildcache/147_001/src'
 alias tools='cd ~/bi_buildcache/147_001/src/ib_tools'
-alias bld="cd ${HOME}/src/ib_build"
+alias bld='cd ${BI_BUILD_PATH}/src'
 alias ws="cd ${HOME}/src/ib_build; source ./bi_setup_fast_build.sh $BUILD_NUM $FEATURE"
 alias pkg="bitbake -g ib-image-warmer && cat pn-buildlist | grep -ve \"native\" | sort | uniq | grep \"ib-\" | grep -v \"glib\""
 alias sta='git status'
+
+
+#gdb aliases
+alias remote_gdb='gdb-multiarch --eval-command="target remote $TRG_IP:2345"'
 
 
 # General Aliases
