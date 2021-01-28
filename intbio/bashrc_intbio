@@ -179,10 +179,10 @@ cd() {
 # bash aliases for lifeborne environments
 export BUILD_NUM=147
 export FEATURE=001
-export TRG_IP=172.17.2.191
+export TRG_IP=172.17.2.110
 FILE=${HOME}/src/ib_build/tools/bash_aliases
 if [ -f ${FILE} ]; then
     source ${FILE}
 fi
 
-
+fws > /dev/null
