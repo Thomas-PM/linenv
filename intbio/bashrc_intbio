@@ -168,7 +168,7 @@ back() {
 
 }
 
-		# Overwrite the builtin cd command to also save current dir
+# Overwrite the builtin cd command to also save current dir
 cd() {
 	PREV_DIR_IDX=$((  $(($PREV_DIR_IDX + 1)) % $PREV_DIR_SIZE))
 	PREV_DIR[PREV_DIR_IDX]=$(pwd)
@@ -176,10 +176,19 @@ cd() {
 }
 
 
+#eclipse
+ECLIPSELAUNCHOUTPUT=~/eclipse_launch.log
+eclipse() {
+	touch $ECLIPSELAUNCHOUTPUT
+	echo "Launching Eclipse 2020. This is an alias. Output stored at $ECLIPSELAUNCHOUTPUT"
+	sudo bash -c "~/Downloads/eclipse/eclipse > $ECLIPSELAUNCHOUTPUT 2>&1 &"
+}
+
+
 # bash aliases for lifeborne environments
 export BUILD_NUM=147
 export FEATURE=001
-export TRG_IP=172.17.2.110
+export TRG_IP=172.17.2.134
 FILE=${HOME}/src/ib_build/tools/bash_aliases
 if [ -f ${FILE} ]; then
     source ${FILE}
