@@ -18,6 +18,10 @@ alias remote-gdb='gdb-multiarch --eval-command="target remote $TRG_IP:2345"'
 
 # General Aliases
 # alias treegitsetup='git config --global alias.lgb "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"'
+alias fthread='ps -L ax | fgrep' #finds threads by process name
+
+
+# git aliases
 alias gitflow-deinit='git config --remove-section "gitflow.path"; git config --remove-section "gitflow.prefix"; git config --remove-section "gitflow.branch"'
 alias com='git commit -am'
 alias sta='git status'

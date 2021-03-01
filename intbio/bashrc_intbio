@@ -150,14 +150,18 @@ recent() {
 	echo Recent directories:
 	echo Currently on $PREV_DIR_IDX
 	for d in ${!PREV_DIR[@]}; do
-		echo $d : ${PREV_DIR[$d]}
+		if [[ $d -eq $PREV_DIR_IDX ]]; then
+			echo \>\>\>\>\>\>\>\> $d : ${PREV_DIR[$d]}
+		else	
+			echo -e '\t' $d : ${PREV_DIR[$d]}
+		fi
 	done
 }
 
 		# Quickly jump back to a recent directory
 back() {
 	DIR_IDX=$PREV_DIR_IDX
-	if [ $# -eq 0 ]; then
+	if [[ $# -eq 0 ]]; then
 		DIR_IDX=$PREV_DIR_IDX
 	else
 		DIR_IDX=$1
@@ -188,7 +192,7 @@ eclipse() {
 # bash aliases for lifeborne environments
 export BUILD_NUM=147
 export FEATURE=001
-export TRG_IP=172.17.2.134
+export TRG_IP=172.17.2.172
 FILE=${HOME}/src/ib_build/tools/bash_aliases
 if [ -f ${FILE} ]; then
     source ${FILE}
