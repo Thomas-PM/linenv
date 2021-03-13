@@ -190,9 +190,9 @@ eclipse() {
 
 
 # bash aliases for lifeborne environments
-export BUILD_NUM=147
+export BUILD_NUM=150
 export FEATURE=001
-export TRG_IP=172.17.2.172
+export TRG_IP=172.17.2.123
 FILE=${HOME}/src/ib_build/tools/bash_aliases
 if [ -f ${FILE} ]; then
     source ${FILE}
