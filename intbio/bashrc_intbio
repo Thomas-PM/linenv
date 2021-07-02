@@ -183,6 +183,7 @@ cd() {
 
 # git repo management
 TRACKED_REPOS=(src/ib_libs src/ib_tools src/ib_warmer src/lb_fwsrv_c)
+LAST_FETCH=~/.lastfetch
 
 #git fetch in all tracked repos
 fetchall() {
@@ -192,8 +193,12 @@ fetchall() {
 		pwd
 		git fetch
 	done
+	touch $LAST_FETCH
 	cd ${BI_BUILD_PATH}
 }
+
+
+
 
 
 #eclipse
@@ -215,6 +220,10 @@ if [ -f ${FILE} ]; then
 fi
 
 fws > /dev/null
-fetchall
+#fetchall if it hasn't been run in 2 hours
+if test `find $LAST_FETCH -mmin +120`
+then
+	fetchall
+fi
 
 
