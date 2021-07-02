@@ -180,22 +180,41 @@ cd() {
 }
 
 
+
+# git repo management
+TRACKED_REPOS=(src/ib_libs src/ib_tools src/ib_warmer src/lb_fwsrv_c)
+
+#git fetch in all tracked repos
+fetchall() {
+	echo "Performing git fetch in all tracked repos..."
+	for i in ${TRACKED_REPOS[@]}; do
+		cd ${BI_BUILD_PATH}/$i
+		pwd
+		git fetch
+	done
+	cd ${BI_BUILD_PATH}
+}
+
+
 #eclipse
 ECLIPSELAUNCHOUTPUT=~/eclipse_launch.log
 eclipse() {
 	touch $ECLIPSELAUNCHOUTPUT
-	echo "Launching Eclipse 2020. This is an alias. Output stored at $ECLIPSELAUNCHOUTPUT"
+	echo "Launching Eclipse 2021. This is an alias. Output stored at $ECLIPSELAUNCHOUTPUT"
 	sudo bash -c "~/Downloads/eclipse/eclipse > $ECLIPSELAUNCHOUTPUT 2>&1 &"
 }
 
 
 # bash aliases for lifeborne environments
-export BUILD_NUM=150
+export BUILD_NUM=153
 export FEATURE=001
-export TRG_IP=172.17.2.123
+export TRG_IP=172.17.2.68
 FILE=${HOME}/src/ib_build/tools/bash_aliases
 if [ -f ${FILE} ]; then
     source ${FILE}
 fi
 
 fws > /dev/null
+fetchall
+
+
