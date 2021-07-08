@@ -191,7 +191,7 @@ fetchall() {
 	for i in ${TRACKED_REPOS[@]}; do
 		cd ${BI_BUILD_PATH}/$i
 		pwd
-		git fetch
+		git fetch -p
 	done
 	touch $LAST_FETCH
 	cd ${BI_BUILD_PATH}
