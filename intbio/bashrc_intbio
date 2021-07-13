@@ -187,6 +187,7 @@ LAST_FETCH=~/.lastfetch
 
 #git fetch in all tracked repos
 fetchall() {
+	FETCHALL_RET_DIR=$(pwd)
 	echo "Performing git fetch in all tracked repos..."
 	for i in ${TRACKED_REPOS[@]}; do
 		cd ${BI_BUILD_PATH}/$i
@@ -194,7 +195,7 @@ fetchall() {
 		git fetch -p
 	done
 	touch $LAST_FETCH
-	cd ${BI_BUILD_PATH}
+	cd ${FETCHALL_RET_DIR}
 }
 
 
@@ -213,7 +214,7 @@ eclipse() {
 # bash aliases for lifeborne environments
 export BUILD_NUM=153
 export FEATURE=001
-export TRG_IP=172.17.2.68
+export TRG_IP=172.17.2.122
 FILE=${HOME}/src/ib_build/tools/bash_aliases
 if [ -f ${FILE} ]; then
     source ${FILE}
