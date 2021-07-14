@@ -25,8 +25,8 @@ alias fthread='ps -L ax | fgrep' #finds threads by process name
 
 # git aliases
 alias gitflow-deinit='git config --remove-section "gitflow.path"; git config --remove-section "gitflow.prefix"; git config --remove-section "gitflow.branch"'
-alias com='git commit -am'
 alias sta='git status'
+alias undo='git reset HEAD~'
 
 
 

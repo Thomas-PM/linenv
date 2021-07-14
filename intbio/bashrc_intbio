@@ -208,6 +208,10 @@ finish() {
 	git flow feature finish
 }
 
+com() {
+	git add .
+	eval "git commit -m \"${1}\""
+}
 
 
 #eclipse
